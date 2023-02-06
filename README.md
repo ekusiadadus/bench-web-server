@@ -27,6 +27,20 @@ Go >> Deno > Rust > bun > Node という結果になりました。
 
 ## 参考
 
+## ベンチマークの実行
+
+### install
+
+```sh
+sudo apt install apache2-utils
+```
+
+### run
+
+```sh
+ab -k -c 10 -n 10000 http://127.0.0.1:3000/
+```
+
 ## ベンチマークのコード
 
 ### Go
@@ -146,18 +160,4 @@ export default {
     return new Response("Hello World");
   },
 };
-```
-
-## ベンチマークの実行
-
-### install
-
-```sh
-sudo apt install apache2-utils
-```
-
-### run
-
-```sh
-ab -k -c 10 -n 10000 http://127.0.0.1:3000/
 ```
