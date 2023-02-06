@@ -11,8 +11,7 @@ pub fn main() anyerror!void {
   try stream_server.listen(address);
   while (true) {
     const client = try stream_server.accept();
-    //write <h1> Hello World </h1> to the client
-    try client.write("HTTP/1.1 200 OK\r\n\r\nContent-Type: text/html\r\n\r\n<h1>Hello World</h1>", .{});
-  }
-
+      const response = "HTTP/1.1 200 OK\r\n\r\n<h1>Hello World</h1>";
+      try client.write(response);
+    }
 }
