@@ -9,7 +9,7 @@ mattn さんが、Go と Node の速度を比較するベンチマークを書�
 
 | Language | Requests per second | Time per request |
 | :------- | :------------------ | :--------------- |
-| bun      | 22807.88            | 0.438            |
+| bun      | 11793.40            | 0.848            |
 | deno     | 32913.58            | 0.304            |
 | go       | 85736.82            | 0.117            |
 | node     | 11187.35            | 0.894            |
@@ -117,28 +117,16 @@ server.listen(port);
 ### Deno
 
 ```ts
-// Start listening on port 8080 of localhost.
 const server = Deno.listen({ port: 3000 });
-console.log(`HTTP webserver running.  Access it at:  http://localhost:3000/`);
 
-// Connections to the server will be yielded up as an async iterable.
 for await (const conn of server) {
-  // In order to not be blocking, we need to handle each connection individually
-  // without awaiting the function
   serveHttp(conn);
 }
 
 async function serveHttp(conn: Deno.Conn) {
-  // This "upgrades" a network connection into an HTTP connection.
   const httpConn = Deno.serveHttp(conn);
-  // Each request sent over the HTTP connection will be yielded as an async
-  // iterator from the HTTP connection.
   for await (const requestEvent of httpConn) {
-    // The native HTTP server uses the web standard `Request` and `Response`
-    // objects.
     const body = "<h1>Hello World</h1>";
-    // The requestEvent's `.respondWith()` method is how we send the response
-    // back to the client.
     requestEvent.respondWith(
       new Response(body, {
         status: 200,
@@ -150,7 +138,7 @@ async function serveHttp(conn: Deno.Conn) {
 
 ### bun
 
-```bun
+```ts
 // TypeScript: http.ts
 export default {
   port: 3000,
@@ -158,7 +146,6 @@ export default {
     return new Response("Hello World");
   },
 };
-
 ```
 
 ## ベンチマークの実行

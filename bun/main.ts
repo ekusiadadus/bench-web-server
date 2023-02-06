@@ -2,6 +2,6 @@
 export default {
   port: 3000,
   fetch(request: Request) {
-    return new Response("Hello World");
+    return new Response("<h1>Hello World</h1>");
   },
 };
