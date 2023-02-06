@@ -13,23 +13,23 @@ Document Path:          /
 Document Length:        20 bytes
 
 Concurrency Level:      10
-Time taken for tests:   0.888 seconds
+Time taken for tests:   0.894 seconds
 Complete requests:      10000
 Failed requests:        0
 Keep-Alive requests:    0
 Total transferred:      1200000 bytes
 HTML transferred:       200000 bytes
-Requests per second:    11262.87 [#/sec] (mean)
-Time per request:       0.888 [ms] (mean)
+Requests per second:    11187.35 [#/sec] (mean)
+Time per request:       0.894 [ms] (mean)
 Time per request:       0.089 [ms] (mean, across all concurrent requests)
-Transfer rate:          1319.87 [Kbytes/sec] received
+Transfer rate:          1311.02 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.1      0       1
-Processing:     0    1   0.5      1       8
-Waiting:        0    1   0.4      0       7
-Total:          0    1   0.5      1       8
+Processing:     0    1   0.5      1       7
+Waiting:        0    1   0.4      0       6
+Total:          0    1   0.5      1       7
 ERROR: The median and mean for the waiting time are more than twice the standard
        deviation apart. These results are NOT reliable.
 
@@ -41,5 +41,5 @@ Percentage of the requests served within a certain time (ms)
   90%      1
   95%      2
   98%      2
-  99%      3
- 100%      8 (longest request)
+  99%      2
+ 100%      7 (longest request)

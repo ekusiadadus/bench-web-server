@@ -16,7 +16,7 @@ run-node:
 	node node/main.js
 
 run-bun:
-  bun run main.ts
+	bun run bun/main.ts
 
 run-deno:
 	deno run --allow-net deno/main.ts
@@ -33,5 +33,14 @@ bench-rust:
 bench-node:
 	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/node.txt
 
+bench-bun:
+	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/bun.txt
+
+bench-deno:
+	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/deno.txt
+
 bench-zig:
 	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/zig.txt
+
+check-port:
+	echo 'sudo lsof -i :3000'
