@@ -21,8 +21,6 @@ run-bun:
 run-deno:
 	deno run --allow-net deno/main.ts
 
-bench:
-	ab -k -c 10 -n 10000 http://127.0.0.1:3000/
 
 bench-go:
 	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/go.txt
@@ -56,3 +54,6 @@ clone-abe:
      --domains website.org \
      --no-parent \
 		 http://abehiroshi.la.coocan.jp
+
+abench:
+	ab -k -c 10 -n 10000 http://127.0.0.1:3000/
