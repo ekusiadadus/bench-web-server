@@ -44,3 +44,15 @@ bench-zig:
 
 check-port:
 	echo 'sudo lsof -i :3000'
+
+clone-abe:
+	wget \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains website.org \
+     --no-parent \
+		 http://abehiroshi.la.coocan.jp
