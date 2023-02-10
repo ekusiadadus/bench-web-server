@@ -6,6 +6,9 @@ build-go:
 build-rust:
 	rustc rust/main.rs && ./main
 
+build-rust-release:
+	rustc rust/main.rs -C opt-level=3 -C lto && ./main
+
 build-zig:
 	zig build-exe zig/main.zig && ./main
 
