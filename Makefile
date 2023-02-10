@@ -6,8 +6,17 @@ build-go:
 build-rust:
 	rustc rust/main.rs && ./main
 
+build-rust-server:
+	cargo run --release ./rust/simple-server
+
+build-multi-rust2:
+	rustc rust/multi-thread2.rs && ./multi-thread2
+
 build-rust-release:
 	rustc rust/main.rs -C opt-level=3 -C lto && ./main
+
+build-multi-rust2-release:
+	rustc rust/multi-thread2.rs -C opt-level=3 -C lto && ./multi-thread2
 
 build-zig:
 	zig build-exe zig/main.zig && ./main

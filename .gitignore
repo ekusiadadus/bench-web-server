@@ -2,3 +2,9 @@
 ./main.o
 main
 main.o
+*.rcgu.o
+**./multi*
+**./multi.o
+*.multi*
+multi-thread2
+multi-thread1
