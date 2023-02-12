@@ -12,6 +12,7 @@ pub fn main() anyerror!void {
   while (true) {
     const client = try stream_server.accept();
       const response = "HTTP/1.1 200 OK\r\n\r\n<h1>Hello World</h1>";
-      try client.write(response);
+      // try client.write(response);
+      try client.writeAll(response);
     }
 }

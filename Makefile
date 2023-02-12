@@ -21,8 +21,6 @@ run-bun:
 run-deno:
 	deno run --allow-net deno/main.ts
 
-bench:
-	ab -k -c 10 -n 10000 http://127.0.0.1:3000/
 
 bench-go:
 	ab -k -c 10 -n 10000 http://127.0.0.1:3000/ > bench/go.txt
@@ -44,3 +42,18 @@ bench-zig:
 
 check-port:
 	echo 'sudo lsof -i :3000'
+
+clone-abe:
+	wget \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains website.org \
+     --no-parent \
+		 http://abehiroshi.la.coocan.jp
+
+abench:
+	ab -k -c 10 -n 10000 http://127.0.0.1:3000/
