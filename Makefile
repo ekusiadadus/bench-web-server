@@ -57,15 +57,9 @@ check-port:
 
 clone-abe:
 	wget \
-     --recursive \
-     --no-clobber \
-     --page-requisites \
-     --html-extension \
-     --convert-links \
-     --restrict-file-names=windows \
-     --domains website.org \
-     --no-parent \
-		 http://abehiroshi.la.coocan.jp
+		-P ./abe \
+    --recursive \
+    --no-parent http://abehiroshi.la.coocan.jp
 
 abench:
 	ab -k -c 10 -n 10000 http://127.0.0.1:3000/
